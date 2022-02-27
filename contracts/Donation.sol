@@ -25,7 +25,7 @@ contract Donation {
     }
 
     function withdraw(address payable from, uint256 amount) external {
-        require(msg.sender == owner);
+        require(msg.sender == owner, "not owner");
         from.transfer(amount);
     }
 
